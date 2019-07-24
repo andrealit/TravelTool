@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B0A4F154AFAF3F76441EDBA3 /* Pods_TravelTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1299CD5690A4258079D3A2 /* Pods_TravelTool.framework */; };
 		F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECD822E91EEB008CE19E /* AppDelegate.swift */; };
-		F48FECDB22E91EEB008CE19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* ViewController.swift */; };
+		F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */; };
 		F48FECDE22E91EEB008CE19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDC22E91EEB008CE19E /* Main.storyboard */; };
 		F48FECE022E91EEB008CE19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDF22E91EEB008CE19E /* Assets.xcassets */; };
 		F48FECE322E91EEB008CE19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		78961F8A9AB136172E2096BF /* Pods-TravelTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTool/Pods-TravelTool.release.xcconfig"; sourceTree = "<group>"; };
 		F48FECD522E91EEB008CE19E /* TravelTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48FECD822E91EEB008CE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F48FECDA22E91EEB008CE19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMessageViewController.swift; sourceTree = "<group>"; };
 		F48FECDD22E91EEB008CE19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F48FECDF22E91EEB008CE19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F48FECE222E91EEB008CE19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F48FECD822E91EEB008CE19E /* AppDelegate.swift */,
-				F48FECDA22E91EEB008CE19E /* ViewController.swift */,
+				F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */,
 				F48FECDC22E91EEB008CE19E /* Main.storyboard */,
 				F48FECDF22E91EEB008CE19E /* Assets.xcassets */,
 				F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */,
@@ -204,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F48FECDB22E91EEB008CE19E /* ViewController.swift in Sources */,
+				F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */,
 				F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
