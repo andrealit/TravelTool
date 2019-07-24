@@ -115,11 +115,11 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-8J-WZ5">
-                                <rect key="frame" x="16" y="820" width="24" height="22"/>
+                                <rect key="frame" x="16" y="814" width="24" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1IF-84-GVk"/>
                                 </constraints>
-                                <state key="normal" title="Image Message" image="ic_add_a_photo"/>
+                                <state key="normal" title="Image Message"/>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-jV-qSR">
                                 <rect key="frame" x="16" y="92" width="382" height="712"/>
@@ -173,11 +173,12 @@
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="BIo-Bj-XYJ"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="NVG-Ig-WMp"/>
                         <outlet property="imageDisplay" destination="gLD-jV-qSR" id="DUN-s7-WfS"/>
+                        <outlet property="imageMessage" destination="nhb-8J-WZ5" id="CMD-ZC-1Qr"/>
                         <outlet property="messageTextField" destination="STK-FK-gn5" id="Ecg-Bg-VzC"/>
                         <outlet property="messagesTable" destination="DHD-HU-kCB" id="wu3-D7-t29"/>
                         <outlet property="sendButton" destination="wv1-bL-LxQ" id="Sn6-Xk-Ml2"/>
                         <outlet property="signInButton" destination="saZ-zf-ltO" id="105-G5-rhx"/>
-                        <outlet property="signOutButton" destination="nhb-8J-WZ5" id="LFj-c2-otB"/>
+                        <outlet property="signOutButton" destination="6uD-8t-BBQ" id="lol-s1-XDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLT-eE-jeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,6 +190,5 @@
     </scenes>
     <resources>
         <image name="ic_account_circle" width="24" height="24"/>
-        <image name="ic_add_a_photo" width="24" height="24"/>
     </resources>
 </document>

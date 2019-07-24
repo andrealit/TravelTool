@@ -18,8 +18,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     var ref: DatabaseReference!
     var messages: [DataSnapshot]! = []
     var msglength: NSNumber = 1000
-    var storageRef: StorageReference!
-    var remoteConfig: RemoteConfig!
+//    var storageRef: StorageReference!
+//    var remoteConfig: RemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
     var keyboardOnScreen = false
     
@@ -27,6 +27,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var imageMessage: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var messagesTable: UITableView!
     @IBOutlet weak var backgroundBlur: UIVisualEffectView!
@@ -74,6 +75,64 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func fetchConfig() {
         // TODO: update to the current coniguratation
     }
+    
+    // MARK: Sign In and Out
+    
+    func signedInStatus(isSignedIn: Bool) {
+        signInButton.isHidden = isSignedIn
+        signOutButton.isHidden = !isSignedIn
+        messagesTable.isHidden = !isSignedIn
+        messageTextField.isHidden = !isSignedIn
+        sendButton.isHidden = !isSignedIn
+        imageMessage.isHidden = !isSignedIn
+        
+        if (isSignedIn) {
+            
+            // remove background blur (will use when showing image messages)
+            messagesTable.rowHeight = UITableView.automaticDimension
+            messagesTable.estimatedRowHeight = 122.0
+            backgroundBlur.effect = nil
+            //messageTextField.delegate = self
+            
+            // TODO: Set up app to send and receive messages when signed in
+        }
+    }
+    
+    func loginSession() {
+//        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+//        self.present(authViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: Send Message
+    
+    func sendMessage(data: [String:String]) {
+        // TODO: create method that pushes message to the firebase database
+    }
+    
+    func sendPhotoMessage(photoData: Data) {
+        // TODO: create method that pushes message w/ photo to the firebase database
+    }
+    
+    // MARK: Alert
+    
+    func showAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+            alert.addAction(dismissAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: Scroll Messages
+    
+    func scrollToBottomMessage() {
+        if messages.count == 0 { return }
+        let bottomMessageIndex = IndexPath(row: messagesTable.numberOfRows(inSection: 0) - 1, section: 0)
+        messagesTable.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
+    }
+    
+    // MARK: Actions
 
 }
 
