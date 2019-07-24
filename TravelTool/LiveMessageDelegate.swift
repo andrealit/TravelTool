@@ -25,7 +25,7 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,9 +63,9 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension LiveMessageViewController: UIImagePickerControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // constant to hold the information about the photo
-        if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage, let photoData = UIImageJPEGRepresentation(photo, 0.8) {
+        if let photo = info[.originalImage] as? UIImage, let photoData = photo.jpegData(compressionQuality: 0.8) {
             // call function to upload photo message
             sendPhotoMessage(photoData: photoData)
         }
