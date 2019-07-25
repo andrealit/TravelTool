@@ -134,5 +134,41 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     // MARK: Actions
 
+    @IBAction func showLoginView(_ sender: AnyObject) {
+        loginSession()
+    }
+    
+    @IBAction func didTapAddPhoto(_ sender: AnyObject) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func signOut(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func didSendMessage(_ sender: UIButton) {
+        let _ = textFieldShouldReturn(messageTextField)
+        messageTextField.text = ""
+    }
+    
+    @IBAction func dismissImageDisplay(_ sender: AnyObject) {
+        // if touch detected when image is displayed
+        if imageDisplay.alpha == 1.0 {
+            UIView.animate(withDuration: 0.25) {
+                self.backgroundBlur.effect = nil
+                self.imageDisplay.alpha = 0.0
+            }
+            dismissImageRecognizer.isEnabled = false
+            messageTextField.isEnabled = true
+        }
+    }
+    
+    @IBAction func tappedView(_ sender: AnyObject) {
+        resignTextfield()
+    }
+    
 }
 
