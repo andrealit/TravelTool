@@ -150,6 +150,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func didSendMessage(_ sender: UIButton) {
+        print(messageTextField.text)
         let _ = textFieldShouldReturn(messageTextField)
         messageTextField.text = ""
     }

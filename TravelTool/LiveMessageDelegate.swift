@@ -92,8 +92,10 @@ extension LiveMessageViewController: UITextFieldDelegate {
         if !textField.text!.isEmpty {
             let data = [Constants.MessageFields.text: textField.text! as String]
             sendMessage(data: data)
+//            print(data)
             textField.resignFirstResponder()
         }
+        
         return true
     }
     
