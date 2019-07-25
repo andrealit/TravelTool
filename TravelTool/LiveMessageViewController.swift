@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
 // MARK: - LiveMessageViewController
 
@@ -18,8 +19,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     var ref: DatabaseReference!
     var messages: [DataSnapshot]! = []
     var msglength: NSNumber = 1000
-//    var storageRef: StorageReference!
-//    var remoteConfig: RemoteConfig!
+    var storageRef: StorageReference!
+    var remoteConfig: RemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
     var keyboardOnScreen = false
     var placeholderImage = UIImage(named: "ic_account_circle")
@@ -57,6 +58,26 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func configureAuth() {
         // TODO: configure firebase authentication
+        _authHandle = Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
+            // refresh table data
+            self.messages.removeAll(keepingCapacity: false)
+            self.messagesTable.reloadData()
+            
+            // check if there is a current user
+            if let activeUser = user {
+                // check if the current app user is the current Firebase user
+                if self.user != activeUser {
+                    self.user = activeUser
+                    self.signedInStatus(isSignedIn: true)
+                    let name = user!.email!.components(separatedBy: "@")[0]
+                    self.displayName = name
+                }
+            } else {
+                // user needs to sign in
+                self.signedInStatus(isSignedIn: false)
+                self.loginSession()
+            }
+        }
     }
     
     func configureDatabase() {
@@ -70,6 +91,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     deinit {
         // TODO: set up what needs to be deinitialized when view is no longer being used
+        ref.child("messages").removeObserver(withHandle: _refHandle)
+        Auth.auth().removeStateDidChangeListener(_authHandle)
     }
     
     // MARK: Remote Config
@@ -105,8 +128,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func loginSession() {
-//        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
-//        self.present(authViewController, animated: true, completion: nil)
+        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+        self.present(authViewController, animated: true, completion: nil)
     }
     
     // MARK: Send Message
