@@ -20,6 +20,8 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // dequeue cell
         let cell: UITableViewCell! = messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
+        // upack message from firebase data snapshot
+        
         return cell!
         // TODO: update cell to display message data
     }

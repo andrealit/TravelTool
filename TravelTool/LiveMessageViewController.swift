@@ -22,6 +22,11 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
 //    var remoteConfig: RemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
     var keyboardOnScreen = false
+    var placeholderImage = UIImage(named: "ic_account_circle")
+    fileprivate var _refHandle: DatabaseHandle!
+    fileprivate var _authHandle: AuthStateDidChangeListenerHandle!
+    var user: User?
+    var displayName = "Guest"
     
     // MARK: Outlets
     @IBOutlet weak var messageTextField: UITextField!
@@ -56,6 +61,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func configureDatabase() {
         // TODO: configure database to sync messages
+        ref = Database.database().reference()
     }
     
     func configureStorage() {
@@ -107,6 +113,9 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func sendMessage(data: [String:String]) {
         // TODO: create method that pushes message to the firebase database
+        var mdata = data
+        mdata[Constants.MessageFields.name] = displayName
+        ref.child("messages").childByAutoId().setValue(mdata)
     }
     
     func sendPhotoMessage(photoData: Data) {
