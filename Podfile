@@ -6,7 +6,7 @@ target 'TravelTool' do
   use_frameworks!
 
   # Pods for TravelTool
-  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
