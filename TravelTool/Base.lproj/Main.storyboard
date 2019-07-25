@@ -121,11 +121,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-8J-WZ5">
-                                <rect key="frame" x="16" y="814" width="24" height="34"/>
+                                <rect key="frame" x="16" y="819" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1IF-84-GVk"/>
                                 </constraints>
-                                <state key="normal" title="Image Message"/>
+                                <state key="normal" title="Image Message" image="ic_add_a_photo"/>
                                 <connections>
                                     <action selector="didTapAddPhoto:" destination="uMT-A3-F60" eventType="touchUpInside" id="rBi-Oc-NUf"/>
                                 </connections>
@@ -210,5 +210,6 @@
     </scenes>
     <resources>
         <image name="ic_account_circle" width="24" height="24"/>
+        <image name="ic_add_a_photo" width="24" height="24"/>
     </resources>
 </document>
