@@ -22,7 +22,7 @@ To download the code, you'll have to clone the repo. Then, to install Firebase f
 `pod install`
 
 ### Running the app
-After executing 'pod install', open the TravelTool.xcworkspace file that has been generated with XCode. You will need an application ID and application key to use the Mapbox API. Open ClientConstants.swift in XCode and add them:
+After executing 'pod install', open the `TravelTool.xcworkspace` file that has been generated with XCode. You will need an application ID and application key to use the Mapbox API. Open `ClientConstants.swift` in XCode and add them:
 
 ## Resources
 This app uses the following frameworks and APIs: 
