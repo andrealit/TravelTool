@@ -18,6 +18,7 @@ The user can then switch to a live messaging service for updates on the area.
 
 ### Getting the Code
 To download the code, you'll have to clone the repo. Then, to install Firebase frameworks, you'll need to use Cocoapods and execute a 'pod install' command for the PodFile to download all third-party frameworks.
+
 `pod install`
 
 ### Running the app
