@@ -1,21 +1,42 @@
 # TravelTool
-An app for pedestrians with live messaging and reports!
-Udacity iOS Nanodegree Capstone Project.
 
-## Description
+This app is created for Udacity iOS Nanodegree Capstone Project.
+
+## Objective
+An navigation app for pedestrians, allowing pedestrians to post real-time updates.
+
+## How to use the app
+After the app is launched, a map view is shown. 
+The user can long press the map to select a destination and get navigation directions.
+The user can then switch to a live messaging service for updates on the area.
+
+## Build and Install 
 ### Requirements
-- Building sophisticated and polished user interfaces with UIKit components
-- Downloading data from network resources
-- Persisting state on the device
-- Researching and integrating new libraries
+- Xcode 10.1
+- iOS 12.1
+- Swift 4.2
 
-## Usage
-Clone the GitHub repository or download the zip file. XCode 9.3-compatible.
+### Getting the Code
+To download the code, you'll have to clone the repo. Then, to install Firebase frameworks, you'll need to use Cocoapods and execute a 'pod install' command for the PodFile to download all third-party frameworks.
+
+`pod install`
+
+### Running the app
+After executing 'pod install', open the `TravelTool.xcworkspace` file that has been generated with XCode. You will need an application ID and application key to use the Mapbox API. Open `ClientConstants.swift` in XCode and add them:
 
 ## Resources
-### Mapbox
-- Mapbox iOS SDK
-- Mapbox Navigation SDK
-### Firebase
-- Firebase Database
-- Firebase Storage
+This app uses the following frameworks and APIs: 
+
+### Third-Party Frameworks
+| Framework | Description |
+| --- | --- |
+| Cocoapods | File dependency manager. |
+| Firebase | Real time database for messaging. |
+
+### APIS
+| API | Description |
+| --- | --- |
+| Mapbox | Creates navigation paths and maps. |
+
+## License
+The contents of this repository are covered under the Apache License 2.0.
