@@ -85,6 +85,12 @@
                             <constraint firstItem="e04-Rs-d31" firstAttribute="centerY" secondItem="LmA-zH-og8" secondAttribute="centerY" id="pKS-nh-eBO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="e04-Rs-d31" id="A4z-Dy-mDh"/>
+                        <outlet property="email" destination="co2-Ub-eeG" id="o4f-im-EWl"/>
+                        <outlet property="loginBtn" destination="iIc-4c-Dei" id="0tI-pP-hNG"/>
+                        <outlet property="password" destination="kIX-Yx-Mar" id="cRv-WM-BeF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGI-Xv-n8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,7 @@
 		F438E24522EF4E7F005B61D6 /* UdacitySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */; };
 		F438E24722EF4EB0005B61D6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24622EF4EB0005B61D6 /* Extensions.swift */; };
 		F438E24B22EF5BD6005B61D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */; };
+		F438E24D22EF5CC8005B61D6 /* ErrorDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */; };
 		F459D70822EE1EE7007EA947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */; };
 		F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECD822E91EEB008CE19E /* AppDelegate.swift */; };
 		F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */; };
@@ -36,6 +37,7 @@
 		F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacitySerialization.swift; sourceTree = "<group>"; };
 		F438E24622EF4EB0005B61D6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDisplay.swift; sourceTree = "<group>"; };
 		F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F48FECD522E91EEB008CE19E /* TravelTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48FECD822E91EEB008CE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,8 @@
 			children = (
 				F438E23C22EF4CA3005B61D6 /* Live Message Controller */,
 				F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */,
+				F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */,
+				F438E24622EF4EB0005B61D6 /* Extensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,7 +157,6 @@
 				F48FECDF22E91EEB008CE19E /* Assets.xcassets */,
 				F48FECE422E91EEB008CE19E /* Info.plist */,
 				F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */,
-				F438E24622EF4EB0005B61D6 /* Extensions.swift */,
 			);
 			path = TravelTool;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */,
 				F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */,
 				F438E24322EF4E55005B61D6 /* StudentLocations.swift in Sources */,
+				F438E24D22EF5CC8005B61D6 /* ErrorDisplay.swift in Sources */,
 				F438E24722EF4EB0005B61D6 /* Extensions.swift in Sources */,
 				F438E24522EF4E7F005B61D6 /* UdacitySerialization.swift in Sources */,
 				F438E23B22EF4C36005B61D6 /* StudentModel.swift in Sources */,
