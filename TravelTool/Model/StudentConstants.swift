@@ -34,7 +34,7 @@ struct StudentConstants {
 
 struct Methods {
     static let StudentLocation = "/StudentLocation"
-    //static let StudentInformation = "/users/" + (NetworkLayer.shared().sessionID ?? "")
+    static let StudentInformation = "/users/" + (NetworkLayer.shared().sessionID ?? "")
     
     static let UdacityAuthentication = "/session"
 }

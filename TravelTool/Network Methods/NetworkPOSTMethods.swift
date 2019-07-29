@@ -16,7 +16,7 @@ extension NetworkLayer{
         
         let request = NSMutableURLRequest(url: self.onTheMapURLFromParameters(parameters, withPathExtension: method))
         request.httpMethod = "POST"
-        request.allHTTPHeaderFields = Constants.headers
+        request.allHTTPHeaderFields = StudentConstants.headers
         request.httpBody = jsonBody
         
         let task = NetworkLayer.shared().session.dataTask(with: request as URLRequest) { (data, response, error) in let(success, _) = NetworkChecker.checkForDataResponse(functionName: "postData", data: data, response: response, error: error)
