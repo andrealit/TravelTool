@@ -14,6 +14,7 @@
 		F438E24322EF4E55005B61D6 /* StudentLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24222EF4E55005B61D6 /* StudentLocations.swift */; };
 		F438E24522EF4E7F005B61D6 /* UdacitySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */; };
 		F438E24722EF4EB0005B61D6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24622EF4EB0005B61D6 /* Extensions.swift */; };
+		F438E24B22EF5BD6005B61D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */; };
 		F459D70822EE1EE7007EA947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */; };
 		F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECD822E91EEB008CE19E /* AppDelegate.swift */; };
 		F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */; };
@@ -34,6 +35,7 @@
 		F438E24222EF4E55005B61D6 /* StudentLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocations.swift; sourceTree = "<group>"; };
 		F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacitySerialization.swift; sourceTree = "<group>"; };
 		F438E24622EF4EB0005B61D6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F48FECD522E91EEB008CE19E /* TravelTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48FECD822E91EEB008CE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,24 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F438E24822EF5748005B61D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F438E23C22EF4CA3005B61D6 /* Live Message Controller */,
+				F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F438E24922EF577D005B61D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F48FECDC22E91EEB008CE19E /* Main.storyboard */,
+				F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F48FECCC22E91EEB008CE19E = {
 			isa = PBXGroup;
 			children = (
@@ -127,11 +147,10 @@
 			children = (
 				F438E23922EF4B81005B61D6 /* Model */,
 				F438E24122EF4D9B005B61D6 /* Supporting Files */,
-				F438E23C22EF4CA3005B61D6 /* Live Message Controller */,
+				F438E24822EF5748005B61D6 /* Controller */,
 				F495789022E923CB00A99D67 /* Constants.swift */,
-				F48FECDC22E91EEB008CE19E /* Main.storyboard */,
+				F438E24922EF577D005B61D6 /* View */,
 				F48FECDF22E91EEB008CE19E /* Assets.xcassets */,
-				F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */,
 				F48FECE422E91EEB008CE19E /* Info.plist */,
 				F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */,
 				F438E24622EF4EB0005B61D6 /* Extensions.swift */,
@@ -315,6 +334,7 @@
 				F438E23B22EF4C36005B61D6 /* StudentModel.swift in Sources */,
 				F438E24022EF4D82005B61D6 /* StudentValidCheck.swift in Sources */,
 				F495789122E923CB00A99D67 /* Constants.swift in Sources */,
+				F438E24B22EF5BD6005B61D6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
