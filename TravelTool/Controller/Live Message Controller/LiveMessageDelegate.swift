@@ -21,7 +21,12 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
         // dequeue cell
         let cell: UITableViewCell! = messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
         // upack message from firebase data snapshot
-        
+        let messageSnapshot: DataSnapshot! = messages[indexPath.row]
+        let message = messageSnapshot.value as! [String:String]
+        let name = message[Constants.MessageFields.name] ?? "[username]"
+        let text = message[Constants.MessageFields.text] ?? "[message]"
+        cell!.textLabel?.text = name + ": " + text
+        cell!.imageView?.image = self.placeholderImage
         return cell!
         // TODO: update cell to display message data
     }
@@ -94,10 +99,8 @@ extension LiveMessageViewController: UITextFieldDelegate {
         if !textField.text!.isEmpty {
             let data = [Constants.MessageFields.text: textField.text! as String]
             sendMessage(data: data)
-//            print(data)
             textField.resignFirstResponder()
         }
-        
         return true
     }
     

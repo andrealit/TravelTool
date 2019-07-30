@@ -84,22 +84,28 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func configureDatabase() {
         // TODO: configure database to sync messages
         ref = Database.database().reference()
+        _refHandle = ref.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
+            self.messages.append(snapshot)
+            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
+            self.scrollToBottomMessage()
+        }
     }
     
     func configureStorage() {
         // TODO: configure storage using your firebase storage
+        
     }
     
     deinit {
         // TODO: set up what needs to be deinitialized when view is no longer being used
         ref.child("messages").removeObserver(withHandle: _refHandle)
-        Auth.auth().removeStateDidChangeListener(_authHandle)
     }
     
     // MARK: Remote Config
     
     func configureRemoteConfig() {
         // TODO: configure remote configuration settings
+        
     }
     
     func fetchConfig() {
@@ -138,9 +144,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func sendMessage(data: [String:String]) {
         // TODO: create method that pushes message to the firebase database
         var mdata = data
-        print(mdata)
         mdata[Constants.MessageFields.name] = displayName
-        ref.child("messages").childByAutoId().setValue(mdata)
+        self.ref?.child("messages").childByAutoId().setValue(mdata)
     }
     
     func sendPhotoMessage(photoData: Data) {
@@ -184,7 +189,6 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func didSendMessage(_ sender: UIButton) {
-        print(messageTextField.text)
         let _ = textFieldShouldReturn(messageTextField)
         messageTextField.text = ""
     }

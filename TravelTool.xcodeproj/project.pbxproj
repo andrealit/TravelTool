@@ -124,6 +124,7 @@
 		F438E24822EF5748005B61D6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F438E25B22EF6EF0005B61D6 /* Navigation Controller */,
 				F438E23C22EF4CA3005B61D6 /* Live Message Controller */,
 				F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */,
 				F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */,
@@ -153,6 +154,13 @@
 			path = "Network Methods";
 			sourceTree = "<group>";
 		};
+		F438E25B22EF6EF0005B61D6 /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Navigation Controller";
+			sourceTree = "<group>";
+		};
 		F48FECCC22E91EEB008CE19E = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +184,9 @@
 			children = (
 				F438E23922EF4B81005B61D6 /* Model */,
 				F438E24122EF4D9B005B61D6 /* Supporting Files */,
+				F438E24922EF577D005B61D6 /* View */,
 				F438E24822EF5748005B61D6 /* Controller */,
 				F495789022E923CB00A99D67 /* Constants.swift */,
-				F438E24922EF577D005B61D6 /* View */,
 				F438E24E22EF5F00005B61D6 /* Network Methods */,
 				F48FECDF22E91EEB008CE19E /* Assets.xcassets */,
 				F48FECE422E91EEB008CE19E /* Info.plist */,
