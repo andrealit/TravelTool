@@ -29,7 +29,6 @@
 		F48FECE022E91EEB008CE19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDF22E91EEB008CE19E /* Assets.xcassets */; };
 		F48FECE322E91EEB008CE19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */; };
 		F495789122E923CB00A99D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495789022E923CB00A99D67 /* Constants.swift */; };
-		F495789322E9257200A99D67 /* LiveMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495789222E9257200A99D67 /* LiveMessageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +58,6 @@
 		F48FECE222E91EEB008CE19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F48FECE422E91EEB008CE19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F495789022E923CB00A99D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F495789222E9257200A99D67 /* LiveMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMessageDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */,
-				F495789222E9257200A99D67 /* LiveMessageDelegate.swift */,
 			);
 			path = "Live Message Controller";
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 				F438E25422EF678F005B61D6 /* NetworkValidCheck.swift in Sources */,
 				F438E23E22EF4CBE005B61D6 /* StudentSerialization.swift in Sources */,
 				F438E25822EF68B6005B61D6 /* NetworkDELETEMethods.swift in Sources */,
-				F495789322E9257200A99D67 /* LiveMessageDelegate.swift in Sources */,
 				F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */,
 				F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */,
 				F438E24322EF4E55005B61D6 /* StudentLocations.swift in Sources */,
