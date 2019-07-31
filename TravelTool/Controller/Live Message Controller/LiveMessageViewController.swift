@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import GoogleSignIn
 
 // MARK: - LiveMessageViewController
 
@@ -44,17 +45,17 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Life Cycle
     
     override func viewDidLoad() {
-        self.signedInStatus(isSignedIn: true)
-        ref = Database.database().reference()
-        ref?.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
-            // code to execute when child is added under "messages"
-            // take the value from the snapshot and add it to the post data array
-            self.messages.append(snapshot)
-            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
-            self.scrollToBottomMessage()
-        }
+        configureAuth()
         
-        // TODO: Handle what users see when view loads
+//        ref = Database.database().reference()
+//        ref?.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
+//            // code to execute when child is added under "messages"
+//            // take the value from the snapshot and add it to the post data array
+//            self.messages.append(snapshot)
+//            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
+//            self.scrollToBottomMessage()
+//        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,7 +66,11 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Config
     
     func configureAuth() {
-        // TODO: configure firebase authentication
+        // configure firebase authentication
+        let provider: [FUIAuthProvider] = [FUIGoogleAuth()]
+        FUIAuth.defaultAuthUI()?.providers = provider
+        
+        // listen for changes in authorization state
         _authHandle = Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
             // refresh table data
             self.messages.removeAll(keepingCapacity: false)
@@ -106,17 +111,35 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     deinit {
         // TODO: set up what needs to be deinitialized when view is no longer being used
         ref.child("messages").removeObserver(withHandle: _refHandle)
+        Auth.auth().removeStateDidChangeListener(_authHandle)
     }
     
     // MARK: Remote Config
     
     func configureRemoteConfig() {
-        // TODO: configure remote configuration settings
+        // configure remote configuration settings
+        // create remote config setting to enable dev mode
+        let remoteConfigSettings = RemoteConfigSettings()
+        remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.configSettings = remoteConfigSettings
         
     }
     
     func fetchConfig() {
-        // TODO: update to the current coniguratation
+        // set default expiration duration between fetches
+        var expirationDuration: Double = 3600
+        if remoteConfig.configSettings {
+            expirationDuration = 0
+        }
+        
+        // fetch config
+        remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) in
+            if status == .success {
+                print("config fetched")
+                self.remoteConfig.activate(completionHandler: <#T##RemoteConfigActivateCompletion?##RemoteConfigActivateCompletion?##(Error?) -> Void#>)
+            }
+            
+        }
     }
     
     // MARK: Sign In and Out
@@ -128,24 +151,26 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
         messageTextField.isHidden = !isSignedIn
         sendButton.isHidden = !isSignedIn
         imageMessage.isHidden = !isSignedIn
+        backgroundBlur.effect = UIBlurEffect(style: .light)
         
         if (isSignedIn) {
-            
             // remove background blur (will use when showing image messages)
             messagesTable.rowHeight = UITableView.automaticDimension
             messagesTable.estimatedRowHeight = 122.0
             backgroundBlur.effect = nil
             messageTextField.delegate = self
             
-            // TODO: Set up app to send and receive messages when signed in
-//            configureDatabase()
-//            configureStorage()
+            // set up app to send and receive messages when signed in
+            configureDatabase()
+            configureStorage()
+            configureRemoteConfig()
+            fetchConfig()
         }
     }
     
     func loginSession() {
         let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
-        self.present(authViewController, animated: true, completion: nil)
+        present(authViewController, animated: true, completion: nil)
     }
     
     // MARK: Send Message
@@ -159,6 +184,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func sendPhotoMessage(photoData: Data) {
         // TODO: create method that pushes message w/ photo to the firebase database
+        
     }
     
     // MARK: Alert
