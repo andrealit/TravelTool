@@ -128,9 +128,9 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func fetchConfig() {
         // set default expiration duration between fetches
         var expirationDuration: Double = 3600
-        if remoteConfig.configSettings {
-            expirationDuration = 0
-        }
+//        if remoteConfig.configSettings {
+//            expirationDuration = 0
+//        }
         
         // fetch config
         remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) in

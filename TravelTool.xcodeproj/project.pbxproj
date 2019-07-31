@@ -8,47 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B0A4F154AFAF3F76441EDBA3 /* Pods_TravelTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1299CD5690A4258079D3A2 /* Pods_TravelTool.framework */; };
-		F438E23B22EF4C36005B61D6 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E23A22EF4C36005B61D6 /* StudentModel.swift */; };
-		F438E23E22EF4CBE005B61D6 /* StudentSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E23D22EF4CBE005B61D6 /* StudentSerialization.swift */; };
-		F438E24022EF4D82005B61D6 /* StudentValidCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E23F22EF4D82005B61D6 /* StudentValidCheck.swift */; };
-		F438E24322EF4E55005B61D6 /* StudentLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24222EF4E55005B61D6 /* StudentLocations.swift */; };
-		F438E24522EF4E7F005B61D6 /* UdacitySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */; };
-		F438E24722EF4EB0005B61D6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24622EF4EB0005B61D6 /* Extensions.swift */; };
-		F438E24B22EF5BD6005B61D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */; };
-		F438E24D22EF5CC8005B61D6 /* ErrorDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */; };
-		F438E25022EF5F23005B61D6 /* NetworkGETMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E24F22EF5F23005B61D6 /* NetworkGETMethods.swift */; };
-		F438E25222EF5F49005B61D6 /* StudentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E25122EF5F49005B61D6 /* StudentConstants.swift */; };
-		F438E25422EF678F005B61D6 /* NetworkValidCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E25322EF678F005B61D6 /* NetworkValidCheck.swift */; };
-		F438E25622EF67A4005B61D6 /* NetworkPOSTMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E25522EF67A4005B61D6 /* NetworkPOSTMethods.swift */; };
-		F438E25822EF68B6005B61D6 /* NetworkDELETEMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E25722EF68B6005B61D6 /* NetworkDELETEMethods.swift */; };
-		F438E25A22EF6985005B61D6 /* NetworkCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E25922EF6985005B61D6 /* NetworkCommonMethods.swift */; };
+		F42F14A822F2607B00972A00 /* TrafficCity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F42F14A622F2607B00972A00 /* TrafficCity.xcdatamodeld */; };
+		F42F14AA22F2609200972A00 /* TrafficDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F14A922F2609200972A00 /* TrafficDetails.swift */; };
 		F459D70822EE1EE7007EA947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */; };
 		F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECD822E91EEB008CE19E /* AppDelegate.swift */; };
 		F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */; };
 		F48FECDE22E91EEB008CE19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDC22E91EEB008CE19E /* Main.storyboard */; };
 		F48FECE022E91EEB008CE19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDF22E91EEB008CE19E /* Assets.xcassets */; };
 		F48FECE322E91EEB008CE19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */; };
-		F495789122E923CB00A99D67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495789022E923CB00A99D67 /* Constants.swift */; };
+		F4F9489922F25CC500ADE4D1 /* TrafficClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9489822F25CC500ADE4D1 /* TrafficClient.swift */; };
+		F4F9489B22F25D0800ADE4D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9489A22F25D0800ADE4D1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B654A68AE92EABB8EDD6B70 /* Pods-TravelTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTool/Pods-TravelTool.debug.xcconfig"; sourceTree = "<group>"; };
 		3E1299CD5690A4258079D3A2 /* Pods_TravelTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78961F8A9AB136172E2096BF /* Pods-TravelTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTool/Pods-TravelTool.release.xcconfig"; sourceTree = "<group>"; };
-		F438E23A22EF4C36005B61D6 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
-		F438E23D22EF4CBE005B61D6 /* StudentSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSerialization.swift; sourceTree = "<group>"; };
-		F438E23F22EF4D82005B61D6 /* StudentValidCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentValidCheck.swift; sourceTree = "<group>"; };
-		F438E24222EF4E55005B61D6 /* StudentLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocations.swift; sourceTree = "<group>"; };
-		F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacitySerialization.swift; sourceTree = "<group>"; };
-		F438E24622EF4EB0005B61D6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDisplay.swift; sourceTree = "<group>"; };
-		F438E24F22EF5F23005B61D6 /* NetworkGETMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGETMethods.swift; sourceTree = "<group>"; };
-		F438E25122EF5F49005B61D6 /* StudentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConstants.swift; sourceTree = "<group>"; };
-		F438E25322EF678F005B61D6 /* NetworkValidCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkValidCheck.swift; sourceTree = "<group>"; };
-		F438E25522EF67A4005B61D6 /* NetworkPOSTMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPOSTMethods.swift; sourceTree = "<group>"; };
-		F438E25722EF68B6005B61D6 /* NetworkDELETEMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDELETEMethods.swift; sourceTree = "<group>"; };
-		F438E25922EF6985005B61D6 /* NetworkCommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommonMethods.swift; sourceTree = "<group>"; };
+		F42F14A722F2607B00972A00 /* TrafficCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrafficCity.xcdatamodel; sourceTree = "<group>"; };
+		F42F14A922F2609200972A00 /* TrafficDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficDetails.swift; sourceTree = "<group>"; };
 		F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F48FECD522E91EEB008CE19E /* TravelTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48FECD822E91EEB008CE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +34,8 @@
 		F48FECDF22E91EEB008CE19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F48FECE222E91EEB008CE19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F48FECE422E91EEB008CE19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F495789022E923CB00A99D67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4F9489822F25CC500ADE4D1 /* TrafficClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficClient.swift; sourceTree = "<group>"; };
+		F4F9489A22F25D0800ADE4D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,31 +67,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F438E23922EF4B81005B61D6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F438E23A22EF4C36005B61D6 /* StudentModel.swift */,
-				F438E23D22EF4CBE005B61D6 /* StudentSerialization.swift */,
-				F438E23F22EF4D82005B61D6 /* StudentValidCheck.swift */,
-				F438E24222EF4E55005B61D6 /* StudentLocations.swift */,
-				F438E25122EF5F49005B61D6 /* StudentConstants.swift */,
-				F438E24422EF4E7F005B61D6 /* UdacitySerialization.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F438E23C22EF4CA3005B61D6 /* Live Message Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */,
-			);
-			path = "Live Message Controller";
-			sourceTree = "<group>";
-		};
 		F438E24122EF4D9B005B61D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				F48FECD822E91EEB008CE19E /* AppDelegate.swift */,
+				F4F9489A22F25D0800ADE4D1 /* Constants.swift */,
+				F48FECE422E91EEB008CE19E /* Info.plist */,
+				F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -121,11 +81,7 @@
 		F438E24822EF5748005B61D6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F438E25B22EF6EF0005B61D6 /* Navigation Controller */,
-				F438E23C22EF4CA3005B61D6 /* Live Message Controller */,
-				F438E24A22EF5BD6005B61D6 /* LoginViewController.swift */,
-				F438E24C22EF5CC8005B61D6 /* ErrorDisplay.swift */,
-				F438E24622EF4EB0005B61D6 /* Extensions.swift */,
+				F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,25 +93,6 @@
 				F48FECE122E91EEB008CE19E /* LaunchScreen.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F438E24E22EF5F00005B61D6 /* Network Methods */ = {
-			isa = PBXGroup;
-			children = (
-				F438E24F22EF5F23005B61D6 /* NetworkGETMethods.swift */,
-				F438E25522EF67A4005B61D6 /* NetworkPOSTMethods.swift */,
-				F438E25722EF68B6005B61D6 /* NetworkDELETEMethods.swift */,
-				F438E25922EF6985005B61D6 /* NetworkCommonMethods.swift */,
-				F438E25322EF678F005B61D6 /* NetworkValidCheck.swift */,
-			);
-			path = "Network Methods";
-			sourceTree = "<group>";
-		};
-		F438E25B22EF6EF0005B61D6 /* Navigation Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Navigation Controller";
 			sourceTree = "<group>";
 		};
 		F48FECCC22E91EEB008CE19E = {
@@ -179,17 +116,31 @@
 		F48FECD722E91EEB008CE19E /* TravelTool */ = {
 			isa = PBXGroup;
 			children = (
-				F438E23922EF4B81005B61D6 /* Model */,
+				F4F9489622F258BD00ADE4D1 /* Modal */,
 				F438E24122EF4D9B005B61D6 /* Supporting Files */,
 				F438E24922EF577D005B61D6 /* View */,
 				F438E24822EF5748005B61D6 /* Controller */,
-				F495789022E923CB00A99D67 /* Constants.swift */,
-				F438E24E22EF5F00005B61D6 /* Network Methods */,
+				F4F9489722F258F300ADE4D1 /* Network */,
 				F48FECDF22E91EEB008CE19E /* Assets.xcassets */,
-				F48FECE422E91EEB008CE19E /* Info.plist */,
-				F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */,
 			);
 			path = TravelTool;
+			sourceTree = "<group>";
+		};
+		F4F9489622F258BD00ADE4D1 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				F42F14A622F2607B00972A00 /* TrafficCity.xcdatamodeld */,
+				F42F14A922F2609200972A00 /* TrafficDetails.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		F4F9489722F258F300ADE4D1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9489822F25CC500ADE4D1 /* TrafficClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,23 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F438E25422EF678F005B61D6 /* NetworkValidCheck.swift in Sources */,
-				F438E23E22EF4CBE005B61D6 /* StudentSerialization.swift in Sources */,
-				F438E25822EF68B6005B61D6 /* NetworkDELETEMethods.swift in Sources */,
+				F42F14A822F2607B00972A00 /* TrafficCity.xcdatamodeld in Sources */,
+				F4F9489922F25CC500ADE4D1 /* TrafficClient.swift in Sources */,
+				F42F14AA22F2609200972A00 /* TrafficDetails.swift in Sources */,
 				F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */,
 				F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */,
-				F438E24322EF4E55005B61D6 /* StudentLocations.swift in Sources */,
-				F438E24D22EF5CC8005B61D6 /* ErrorDisplay.swift in Sources */,
-				F438E25622EF67A4005B61D6 /* NetworkPOSTMethods.swift in Sources */,
-				F438E24722EF4EB0005B61D6 /* Extensions.swift in Sources */,
-				F438E25A22EF6985005B61D6 /* NetworkCommonMethods.swift in Sources */,
-				F438E25222EF5F49005B61D6 /* StudentConstants.swift in Sources */,
-				F438E24522EF4E7F005B61D6 /* UdacitySerialization.swift in Sources */,
-				F438E25022EF5F23005B61D6 /* NetworkGETMethods.swift in Sources */,
-				F438E23B22EF4C36005B61D6 /* StudentModel.swift in Sources */,
-				F438E24022EF4D82005B61D6 /* StudentValidCheck.swift in Sources */,
-				F495789122E923CB00A99D67 /* Constants.swift in Sources */,
-				F438E24B22EF5BD6005B61D6 /* LoginViewController.swift in Sources */,
+				F4F9489B22F25D0800ADE4D1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +516,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F42F14A622F2607B00972A00 /* TrafficCity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F42F14A722F2607B00972A00 /* TrafficCity.xcdatamodel */,
+			);
+			currentVersion = F42F14A722F2607B00972A00 /* TrafficCity.xcdatamodel */;
+			path = TrafficCity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F48FECCD22E91EEB008CE19E /* Project object */;
 }
