@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseUI
-//import GoogleSignIn
 
 // MARK: - LiveMessageViewController
 
@@ -47,10 +46,11 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         self.signedInStatus(isSignedIn: true)
         ref = Database.database().reference()
-        ref.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
+        ref?.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
+            // code to execute when child is added under "messages"
+            // take the value from the snapshot and add it to the post data array
             self.messages.append(snapshot)
-            
-            //self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
+            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
             self.scrollToBottomMessage()
         }
         
@@ -138,6 +138,8 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
             messageTextField.delegate = self
             
             // TODO: Set up app to send and receive messages when signed in
+//            configureDatabase()
+//            configureStorage()
         }
     }
     
@@ -192,7 +194,11 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func signOut(_ sender: UIButton) {
-        
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("unable to sign out: \(error)")
+        }
     }
     
     @IBAction func didSendMessage(_ sender: UIButton) {
@@ -223,10 +229,12 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
 extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(messages.count)
         return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO: update cell to display message data
         // dequeue cell
         let cell: UITableViewCell! = messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
         // upack message from firebase data snapshot
@@ -235,9 +243,8 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
         let name = message[Constants.MessageFields.name] ?? "[username]"
         let text = message[Constants.MessageFields.text] ?? "[message]"
         cell!.textLabel?.text = name + ": " + text
-        cell!.imageView?.image = self.placeholderImage
+        cell!.imageView?.image = placeholderImage
         return cell!
-        // TODO: update cell to display message data
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -246,6 +253,7 @@ extension LiveMessageViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: if message contains an image, then display the image
+        //guard !messageTextField.isFirstResponder else { return }
     }
     
     // MARK: Show Image Display
