@@ -31,6 +31,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     var displayName = "Guest"
     
     // MARK: Outlets
+    
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
