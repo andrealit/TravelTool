@@ -14,10 +14,24 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     // MARK: Outlets and Properties
     
     
+    var location = [LocationDetails]()
+    var photos = [Photo]()
+    var parkId: String!
+    var parkTitle: String!
+    var address: String = ""
+    var lat: String = ""
+    var lon: String = ""
+    var page: Int = 1
+    var pages: Int = 1
+    var url: String!
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
