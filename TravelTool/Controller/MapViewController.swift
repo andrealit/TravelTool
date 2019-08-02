@@ -12,7 +12,14 @@ import MapKit
 class MapViewController: BaseViewController, MKMapViewDelegate {
     
     // MARK: Outlets and Properties
+    @IBOutlet weak var mapView: MKMapView!
     
+    var annotations = [MKPointAnnotation]()
+    var parkName: String = ""
+    var parkId: String = ""
+    var selectedAnnotation: MKPointAnnotation
+    var lat: String = ""
+    var lon: String = ""
     
     // MARK: Life Cycle
     override func viewDidLoad() {

@@ -66,9 +66,18 @@ class TrafficClient {
         task.resume()
     }
     
-    // MARK: Get parks to populate Map View
+    // MARK: Get traffic to populate Map View
     
-    class func getAllTraffic(completion: @escaping ([]))
+    class func getAllTraffic(completion: @escaping ([LocationDetails]?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.allParkAddresses.url, responseType: [LocationDetails].self) {
+            (response, error) in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion([], error)
+            }
+        }
+    }
     
     
     // MARK: Get Flickr Photo for Detail View
