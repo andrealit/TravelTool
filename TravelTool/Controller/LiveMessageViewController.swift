@@ -137,7 +137,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
         remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) in
             if status == .success {
                 print("config fetched")
-                self.remoteConfig.activateFetched()
+                self.remoteConfig.activate()
                 let friendlyMsgLength = self.remoteConfig["friendly_msg_length"]
                 if friendlyMsgLength.source != .static {
                     self.msglength = friendlyMsgLength.numberValue!
@@ -365,6 +365,7 @@ extension LiveMessageViewController: UITextFieldDelegate {
         if !textField.text!.isEmpty {
             let data = [Constants.MessageFields.text: textField.text! as String]
             sendMessage(data: data)
+            textField.text = ""
             textField.resignFirstResponder()
         }
         return true
