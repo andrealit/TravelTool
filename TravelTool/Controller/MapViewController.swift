@@ -40,7 +40,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         TrafficClient.getAllTraffic { (locations, error) in
             if error == nil {
                 print("Map View request succeeded")
-                self.locations = locations ?? []
+                // self.locations = locations ?? []
                 for location in locations ?? [] {
                     guard let latitude = location.location2?.latitude
                         else { continue }
@@ -103,8 +103,12 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
                     self.parkName = location.name
                 }
             }
-            let controller = storyboard?.instantiateInitialViewController(viewIdentifier: "DetailViewController") as! DetailViewController
-            
+            let controller = storyboard?.instantiateInitialViewController() as! DetailViewController
+            controller.parkId = self.parkId
+            controller.parkTitle = self.parkName
+            controller.lat = self.lat
+            controller.lon = self.lon
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

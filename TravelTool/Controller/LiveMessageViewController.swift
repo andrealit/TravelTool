@@ -129,17 +129,26 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func fetchConfig() {
         // set default expiration duration between fetches
         var expirationDuration: Double = 3600
-//        if remoteConfig.configSettings {
-//            expirationDuration = 0
-//        }
+        if remoteConfig.configSettings.isDeveloperModeEnabled {
+            expirationDuration = 0
+        }
         
         // fetch config
         remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) in
             if status == .success {
                 print("config fetched")
-                self.remoteConfig.activate(completionHandler: <#T##RemoteConfigActivateCompletion?##RemoteConfigActivateCompletion?##(Error?) -> Void#>)
+                self.remoteConfig.activateFetched()
+                let friendlyMsgLength = self.remoteConfig["friendly_msg_length"]
+                if friendlyMsgLength.source != .static {
+                    self.msglength = friendlyMsgLength.numberValue!
+                    print("friend msg length config: \(self.msglength)")
+                } else {
+                    print("not applied because source is static")
+                }
+            } else {
+                print("config not fetched")
+                print("error: \(String(describing: error))")
             }
-            
         }
     }
     
@@ -185,7 +194,20 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func sendPhotoMessage(photoData: Data) {
         // TODO: create method that pushes message w/ photo to the firebase database
+        let imagePath = "chat_photos/" + Auth.auth().currentUser!.uid + "/\(Double(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
         
+        // create a child node at imagePath with photoData and metaData
+        storageRef!.child(imagePath).putData(photoData, metadata: metadata) { (metadata, error) in
+            if let error = error {
+                print("error uploading: \(error)")
+                return
+            }
+            // use sendMessage to add imageURL to database
+            self.sendMessage(data: [Constants.MessageFields.imageUrl: self.storageRef!.child((metadata?.path)!).description])
+            
+        }
     }
     
     // MARK: Alert
@@ -356,7 +378,7 @@ extension LiveMessageViewController: UITextFieldDelegate {
         }
     }
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         if keyboardOnScreen {
             self.view.frame.origin.y += self.keyboardHeight(notification)
         }
@@ -369,7 +391,7 @@ extension LiveMessageViewController: UITextFieldDelegate {
     }
     
     
-    func keyboardDidHide(_ notification: Notification) {
+    @objc func keyboardDidHide(_ notification: Notification) {
         dismissKeyboardRecognizer.isEnabled = false
         keyboardOnScreen = false
     }
@@ -390,10 +412,10 @@ extension LiveMessageViewController: UITextFieldDelegate {
 extension LiveMessageViewController {
     
     func subscribeToKeyboardNotifications() {
-        //        subscribeToNotification(.UIResponder.keyboardWillShowNotification, selector: #selector(keyboardWillShow))
-        //        subscribeToNotification(.UIResponder.keyboardWillHideNotification, selector: #selector(keyboardWillHide))
-        //        subscribeToNotification(.UIResponder.keyboardDidShowNotification, selector: #selector(keyboardDidShow))
-        //        subscribeToNotification(.UIResponder.keyboardDidHideNotification, selector: #selector(keyboardDidHide))
+        subscribeToNotification(UIResponder.keyboardWillShowNotification, selector: #selector(keyboardWillShow))
+        subscribeToNotification(UIResponder.keyboardWillHideNotification, selector: #selector(keyboardWillHide))
+        subscribeToNotification(UIResponder.keyboardDidShowNotification, selector: #selector(keyboardDidShow))
+        subscribeToNotification(UIResponder.keyboardDidHideNotification, selector: #selector(keyboardDidHide))
     }
     
     func subscribeToNotification(_ name: NSNotification.Name, selector: Selector) {
