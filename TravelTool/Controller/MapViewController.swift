@@ -18,7 +18,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     var annotations = [MKPointAnnotation]()
     var parkName: String = ""
     var parkId: String = ""
-    var selectedAnnotation: MKPointAnnotation
+    var selectedAnnotation: MKPointAnnotation?
     var lat: String = ""
     var lon: String = ""
     
@@ -71,6 +71,24 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     
     // MARK: Map View Data Source
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.pinTintColor = .red
+            pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        } else {
+            pinView!.annotation = annotation
+        }
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.selectedAnnotation = view.annotation as? MKPointAnnotation
+    }
+    
     // MARK: Park Detail View
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -80,13 +98,12 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
                 let lat = Double(latitude)
                 guard let longitude = location.location1?.longitude else { continue }
                 let long = Double(longitude)
-                if lat == self.selectedAnnotation.coordinate.latitude && long == self.selectedAnnotation.coordinate.longitude {
+                if lat == self.selectedAnnotation?.coordinate.latitude && long == self.selectedAnnotation?.coordinate.longitude {
                     self.parkId = location.pmaid
                     self.parkName = location.name
                 }
             }
             let controller = storyboard?.instantiateInitialViewController(viewIdentifier: "DetailViewController") as! DetailViewController
-            controller.parkId
             
         }
     }

@@ -15,6 +15,7 @@ class TrafficClient {
         
         case allParkAddresses
         case allParksWithDetails
+        case parkDetails(String)
         case flickrPhotoSearch(String, String, Int, String)
         
         var stringValue: String {
@@ -23,6 +24,8 @@ class TrafficClient {
                 return Endpoints.base + "/v5tj-kqhc.json"
             case .allParksWithDetails:
                 return Endpoints.base + Endpoints.details
+            case .parkDetails(let parkId):
+                return Endpoints.base + Endpoints.details + "?pmaid=\(parkId)"
             case .flickrPhotoSearch(let lat, let lon, let page, let text):
                 return "https://api.flickr.com/services/rest?method=flickr.photos.search&extras=url_l&api_key=4e17e4dda249815c53b3700489d74270&lat=\(lat)&lon=\(lon)&per_page=1&page=\(page)&format=json&nojsoncallback=1&text=\(text)"
             }
@@ -66,10 +69,23 @@ class TrafficClient {
         task.resume()
     }
     
-    // MARK: Get traffic to populate Map View
+    // MARK: Get all traffic to populate Map View
     
     class func getAllTraffic(completion: @escaping ([LocationDetails]?, Error?) -> Void) {
         taskForGETRequest(url: Endpoints.allParkAddresses.url, responseType: [LocationDetails].self) {
+            (response, error) in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion([], error)
+            }
+        }
+    }
+    
+    // MARK: Get specific park for Detail View
+    
+    class func getTrafficDetails(parkId: String, completion: @escaping ([LocationDetails]?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.parkDetails(parkId).url, responseType: [LocationDetails].self) {
             (response, error) in
             if let response = response {
                 completion(response, nil)
