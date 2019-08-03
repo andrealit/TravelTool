@@ -36,7 +36,7 @@ This app uses the following frameworks and APIs:
 ### APIS
 | API | Description |
 | --- | --- |
-| Mapbox | Creates navigation paths and maps. |
+| Flickr | Loads photo images. |
 
 ## License
 The contents of this repository are covered under the Apache License 2.0.
