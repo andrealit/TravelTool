@@ -32,7 +32,8 @@ class DetailViewController: BaseViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getTrafficDetails()
+        getRandomParkPhoto()
     }
     
     // MARK: Retrieve Park Details
@@ -66,7 +67,7 @@ class DetailViewController: BaseViewController {
     func getRandomParkPhoto() {
         let escapedParkTitle = parkTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         // get number of pages in results in order to use in randomPage()
-        TrafficClient.getRandomFlickrPhoto(lat: lat, lon: lon, page: page, text: escapedParkTitle) { (photos, error) in
+        TrafficClient.getRandomFlickrPhoto(lat: lat, lon: lon, page: page, text: escapedParkTitle, completion: { (photos, error) in
             if (photos != nil) {
                 if photos?.pages == 0 {
                     DispatchQueue.main.async {
@@ -74,10 +75,34 @@ class DetailViewController: BaseViewController {
                     }
                 } else {
                     self.pages = photos!.pages
-                    
+                    self.randomPage()
+                }
+                // get Flickr photo from a random page and download it
+                TrafficClient.getRandomFlickrPhoto(lat: self.lat, lon: self.lon, page: self.page, text: escapedParkTitle, completion: { photos, error in
+                    if (photos != nil) {
+                        if photos?.pages == 0 {
+                            DispatchQueue.main.async {
+                                self.imageView.image = UIImage(named: "park")
+                            }
+                        } else {
+                            self.photos = photos!.photo
+                            var url = ""
+                            for photo in self.photos {
+                                url = photo.urlL
+                                self.url = url
+                            }
+                            print("Photo url: \(url)")
+                            self.downloadImage()
+                        }
+                    }
+                })
+            } else {
+                print("Photo is nil")
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(named: "park")
                 }
             }
-        }
+        })
     }
     
     // MARK: Generate random page number for Flickr API Request

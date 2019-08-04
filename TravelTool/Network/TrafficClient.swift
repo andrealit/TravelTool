@@ -9,6 +9,7 @@
 import Foundation
 
 class TrafficClient {
+    
     enum Endpoints {
         static let base = "https://data.seattle.gov/resource"
         static let details = "/2cer-njie.json"
