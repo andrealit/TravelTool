@@ -67,9 +67,9 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Config
     
     func configureAuth() {
-        // configure firebase authentication
-        let provider: [FUIAuthProvider] = [FUIGoogleAuth()]
-        FUIAuth.defaultAuthUI()?.providers = provider
+        // configure firebase Google authentication
+//        let provider: [FUIAuthProvider] = [FUIGoogleAuth()]
+//        FUIAuth.defaultAuthUI()?.providers = provider
         
         // listen for changes in authorization state
         _authHandle = Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
@@ -97,11 +97,11 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     func configureDatabase() {
         // TODO: configure database to sync messages
         ref = Database.database().reference()
-        _refHandle = ref.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
+        _refHandle = ref.child("messages").observe(.childAdded, with: { (snapshot: DataSnapshot) in
             self.messages.append(snapshot)
             self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
             self.scrollToBottomMessage()
-        }
+        })
     }
     
     func configureStorage() {
