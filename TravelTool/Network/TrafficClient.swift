@@ -71,8 +71,8 @@ class TrafficClient {
     
     // MARK: Get all traffic to populate Map View
     
-    class func getAllTraffic(completion: @escaping ([LocationDetails]?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.allParkAddresses.url, responseType: [LocationDetails].self) {
+    class func getAllTraffic(completion: @escaping ([LocationAddresses]?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.allParkAddresses.url, responseType: [LocationAddresses].self) {
             (response, error) in
             if let response = response {
                 completion(response, nil)

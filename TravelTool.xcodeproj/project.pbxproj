@@ -10,6 +10,8 @@
 		B0A4F154AFAF3F76441EDBA3 /* Pods_TravelTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1299CD5690A4258079D3A2 /* Pods_TravelTool.framework */; };
 		F42F14AA22F2609200972A00 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F14A922F2609200972A00 /* LocationDetails.swift */; };
 		F459D70822EE1EE7007EA947 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */; };
+		F45E744622F65BB700E18B6F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E744522F65BB700E18B6F /* DataController.swift */; };
+		F45E744922F6602C00E18B6F /* TravelTool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F45E744722F6602C00E18B6F /* TravelTool.xcdatamodeld */; };
 		F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECD822E91EEB008CE19E /* AppDelegate.swift */; };
 		F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */; };
 		F48FECDE22E91EEB008CE19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48FECDC22E91EEB008CE19E /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		78961F8A9AB136172E2096BF /* Pods-TravelTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTool/Pods-TravelTool.release.xcconfig"; sourceTree = "<group>"; };
 		F42F14A922F2609200972A00 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		F459D70722EE1EE6007EA947 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F45E744522F65BB700E18B6F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F45E744822F6602C00E18B6F /* TravelTool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelTool.xcdatamodel; sourceTree = "<group>"; };
 		F48FECD522E91EEB008CE19E /* TravelTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48FECD822E91EEB008CE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F48FECDA22E91EEB008CE19E /* LiveMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMessageViewController.swift; sourceTree = "<group>"; };
@@ -140,9 +144,11 @@
 		F4F9489622F258BD00ADE4D1 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				F45E744722F6602C00E18B6F /* TravelTool.xcdatamodeld */,
 				F42F14A922F2609200972A00 /* LocationDetails.swift */,
 				F4F8024322F3F636002619C1 /* LocationAddresses.swift */,
 				F4F8023A22F2AC16002619C1 /* LocationPhoto.swift */,
+				F45E744522F65BB700E18B6F /* DataController.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -326,7 +332,9 @@
 				F4F8023B22F2AC16002619C1 /* LocationPhoto.swift in Sources */,
 				F4F9489922F25CC500ADE4D1 /* TrafficClient.swift in Sources */,
 				F42F14AA22F2609200972A00 /* LocationDetails.swift in Sources */,
+				F45E744622F65BB700E18B6F /* DataController.swift in Sources */,
 				F4F8023F22F34CFC002619C1 /* BaseViewController.swift in Sources */,
+				F45E744922F6602C00E18B6F /* TravelTool.xcdatamodeld in Sources */,
 				F48FECDB22E91EEB008CE19E /* LiveMessageViewController.swift in Sources */,
 				F48FECD922E91EEB008CE19E /* AppDelegate.swift in Sources */,
 				F4F9489B22F25D0800ADE4D1 /* Constants.swift in Sources */,
@@ -532,6 +540,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F45E744722F6602C00E18B6F /* TravelTool.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F45E744822F6602C00E18B6F /* TravelTool.xcdatamodel */,
+			);
+			currentVersion = F45E744822F6602C00E18B6F /* TravelTool.xcdatamodel */;
+			path = TravelTool.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F48FECCD22E91EEB008CE19E /* Project object */;
 }

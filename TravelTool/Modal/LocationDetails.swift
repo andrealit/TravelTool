@@ -21,7 +21,7 @@ struct LocationDetails: Codable {
         case childDesc = "child_desc"
         case fieldType = "field_type"
         case youthOnly = "youth_only"
-        case location2 = "location_2"
+        case location2 = "location_1"
     }
 }
 

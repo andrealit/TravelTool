@@ -37,26 +37,25 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     // MARK: Retrieve locations to populate Map
     func getLocationsfromAPI() {
         showActivityIndicator()
-        TrafficClient.getAllTraffic { (locations, error) in
+        TrafficClient.getAllTraffic { (parks, error) in
             if error == nil {
                 print("Map View request succeeded")
-                // self.locations = locations ?? []
-                for location in locations ?? [] {
-                    guard let latitude = location.location2?.latitude
-                        else { continue }
+                self.locations = parks ?? []
+                for park in parks ?? [] {
+                    guard let latitude  = park.location1?.latitude else { continue }
                     let lat = Double(latitude)
-                    guard let longitude = location.location2?.longitude
-                        else { continue }
+                    guard let longitude = park.location1?.longitude else { continue }
                     let long = Double(longitude)
                     let coordinate = CLLocationCoordinate2D(latitude: lat ?? 0.0, longitude: long ?? 0.0)
-                    self.parkName = location.name
-                    self.lat = location.location2?.latitude ?? ""
-                    self.lon = location.location2?.longitude ?? ""
+                    self.parkName = park.name
+                    self.lat = park.location1?.latitude ?? ""
+                    self.lon = park.location1?.longitude ?? ""
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = coordinate
                     annotation.title = self.parkName
                     self.annotations.append(annotation)
                 }
+                
                 DispatchQueue.main.async {
                     self.hideActivityIndicator()
                     self.mapView.addAnnotations(self.annotations)
@@ -103,7 +102,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
                     self.parkName = location.name
                 }
             }
-            let controller = storyboard?.instantiateInitialViewController() as! DetailViewController
+            let controller = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
             controller.parkId = self.parkId
             controller.parkTitle = self.parkName
             controller.lat = self.lat
