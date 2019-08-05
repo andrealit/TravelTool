@@ -59,6 +59,7 @@ class DetailViewController: BaseViewController {
             if error == nil {
                 self.location = location ?? []
                 if location?.isEmpty == true {
+                    self.hideActivityIndicator()
                     self.parkAddress.isHidden = true
                     self.parkHours.isHidden = true
                     self.infoLabel.isHidden = false
@@ -102,6 +103,7 @@ class DetailViewController: BaseViewController {
                 // get Flickr photo from a random page and download it
                 TrafficClient.getRandomFlickrPhoto(lat: self.lat, lon: self.lon, page: self.page, text: escapedParkTitle, completion: { photos, error in
                     if (photos != nil) {
+                        self.infoLabel.isHidden = true
                         if photos?.pages == 0 {
                             DispatchQueue.main.async {
                                 self.imageView.image = UIImage(named: "park")
