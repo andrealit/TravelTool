@@ -6,8 +6,8 @@ This app is created for Udacity iOS Nanodegree Capstone Project.
 An navigation app for pedestrians, allowing pedestrians to post real-time updates.
 
 ## How to use the app
-After the app is launched, a map view is shown. 
-The user can long press the map to select a destination and get navigation directions.
+After the app is launched, a tab view with a live message and map view is shown. 
+The user can press the map to select the pin and get information and photos.
 The user can then switch to a live messaging service for updates on the area.
 
 ## Build and Install 
