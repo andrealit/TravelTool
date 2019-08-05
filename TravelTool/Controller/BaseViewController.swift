@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         // set up activity indicator
         myIndicator = UIActivityIndicatorView (style: UIActivityIndicatorView.Style.gray)
-        self.view.bringSubviewToFront(myIndicator)
+        self.view.addSubview(myIndicator)
         myIndicator.bringSubviewToFront(self.view)
         myIndicator.center = self.view.center
     }

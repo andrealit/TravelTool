@@ -35,6 +35,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     }
     
     // MARK: Retrieve locations to populate Map
+    
     func getLocationsfromAPI() {
         showActivityIndicator()
         TrafficClient.getAllTraffic { (parks, error) in

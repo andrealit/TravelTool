@@ -12,10 +12,10 @@ import CoreData
 class DetailViewController: BaseViewController {
     
     // MARK: Outlets and Properties
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var parkAddress: UILabel!
     @IBOutlet weak var parkHours: UILabel!
-    @IBOutlet weak var noInfoLabel: UILabel!
     
     
     var location = [LocationDetails]()
@@ -34,6 +34,7 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
         getTrafficDetails()
         getRandomParkPhoto()
+        navigationItem.title = parkTitle
     }
     
     // MARK: Retrieve Park Details
@@ -45,7 +46,6 @@ class DetailViewController: BaseViewController {
                 if location?.isEmpty == true {
                     self.parkAddress.isHidden = true
                     self.parkHours.isHidden = true
-                    self.noInfoLabel.isHidden = false
                 } else {
                     for location in location ?? [] {
                         self.address = location.location2?.humanAddress.address ?? ""
@@ -66,7 +66,7 @@ class DetailViewController: BaseViewController {
     
     func getRandomParkPhoto() {
         let escapedParkTitle = parkTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        // get number of pages in results in order to use in randomPage()
+        // number of pages in results in order to use in randomPage()
         TrafficClient.getRandomFlickrPhoto(lat: lat, lon: lon, page: page, text: escapedParkTitle, completion: { (photos, error) in
             if (photos != nil) {
                 if photos?.pages == 0 {

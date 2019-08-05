@@ -22,13 +22,21 @@
             <objects>
                 <viewController title="FCViewController" id="uMT-A3-F60" userLabel="LiveMessageViewController" customClass="LiveMessageViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yPS-DS-Klf"/>
-                        <viewControllerLayoutGuide type="bottom" id="X8X-0F-Bdi"/>
+                        <viewControllerLayoutGuide type="top" id="zMh-Fi-PEo"/>
+                        <viewControllerLayoutGuide type="bottom" id="o90-sB-CiJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dk-Kp-xdq" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soz-qM-lu1" userLabel="Background Blur">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qh4-Oq-lbs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRr-Ou-qfp" userLabel="Header">
                                 <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                                 <subviews>
@@ -142,14 +150,6 @@
                                     <action selector="didTapAddPhoto:" destination="uMT-A3-F60" eventType="touchUpInside" id="rBi-Oc-NUf"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soz-qM-lu1" userLabel="Background Blur">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qh4-Oq-lbs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-jV-qSR">
                                 <rect key="frame" x="16" y="92" width="382" height="712"/>
                             </imageView>
@@ -177,20 +177,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VRr-Ou-qfp" secondAttribute="trailing" constant="-20" id="7LE-0W-xWN"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-4" id="8ff-Rm-C4p"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="8" id="Bqo-a1-UsK"/>
-                            <constraint firstItem="X8X-0F-Bdi" firstAttribute="top" secondItem="soz-qM-lu1" secondAttribute="bottom" id="FKL-SY-YPo"/>
+                            <constraint firstItem="o90-sB-CiJ" firstAttribute="top" secondItem="soz-qM-lu1" secondAttribute="bottom" id="FKL-SY-YPo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="soz-qM-lu1" secondAttribute="trailing" constant="-20" id="Fvo-HH-27I"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="K02-4b-r5g"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="centerY" secondItem="nhb-8J-WZ5" secondAttribute="centerY" id="MG1-Zi-pOg"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="DHD-HU-kCB" secondAttribute="bottom" constant="8" symbolic="YES" id="VzZ-Uw-ID6"/>
-                            <constraint firstItem="X8X-0F-Bdi" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="16" id="bLt-MX-wY3"/>
+                            <constraint firstItem="o90-sB-CiJ" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="16" id="bLt-MX-wY3"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="centerY" secondItem="4Dk-Kp-xdq" secondAttribute="centerY" id="c3y-Dd-Xq5"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="8" id="der-Ny-LDv"/>
                             <constraint firstItem="soz-qM-lu1" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="e5v-1q-lbC"/>
                             <constraint firstItem="wv1-bL-LxQ" firstAttribute="leading" secondItem="STK-FK-gn5" secondAttribute="trailing" constant="8" symbolic="YES" id="e7L-dI-PkH"/>
                             <constraint firstItem="wv1-bL-LxQ" firstAttribute="trailing" secondItem="DHD-HU-kCB" secondAttribute="trailing" id="jLu-32-ERV"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="lXP-yU-4e8"/>
-                            <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="yPS-DS-Klf" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
-                            <constraint firstItem="soz-qM-lu1" firstAttribute="top" secondItem="yPS-DS-Klf" secondAttribute="bottom" id="sdv-Dx-GGs"/>
+                            <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="zMh-Fi-PEo" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
+                            <constraint firstItem="soz-qM-lu1" firstAttribute="top" secondItem="zMh-Fi-PEo" secondAttribute="bottom" id="sdv-Dx-GGs"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="top" id="spZ-ka-Cxy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DHD-HU-kCB" secondAttribute="trailing" constant="-4" id="xhU-Sl-tIr"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="yFC-zL-99b"/>
@@ -246,10 +246,10 @@
         <!--Map View Controller-->
         <scene sceneID="0yX-39-Voo">
             <objects>
-                <viewController id="sfw-kd-zDS" userLabel="Map View Controller" customClass="MapViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="sfw-kd-zDS" userLabel="Map View Controller" customClass="MapViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ey5-JR-tGr"/>
-                        <viewControllerLayoutGuide type="bottom" id="SJ9-3S-Zs2"/>
+                        <viewControllerLayoutGuide type="top" id="xuZ-Sc-nkk"/>
+                        <viewControllerLayoutGuide type="bottom" id="ax2-5g-n6D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yRv-c2-pUl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -277,38 +277,31 @@
         <!--Detail View Controller-->
         <scene sceneID="x4r-0l-fSj">
             <objects>
-                <viewController id="Zm8-hw-4hH" userLabel="Detail View Controller" customClass="DetailViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Zm8-hw-4hH" userLabel="Detail View Controller" customClass="DetailViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EIr-3A-DKl"/>
-                        <viewControllerLayoutGuide type="bottom" id="dy4-26-NQ0"/>
+                        <viewControllerLayoutGuide type="top" id="Lmk-hL-iMu"/>
+                        <viewControllerLayoutGuide type="bottom" id="CUx-1a-1LJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yNg-dA-kwA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No info to display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hG-Hh-mOm" userLabel="No Info Label">
-                                <rect key="frame" x="140" y="485" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="park_filler" translatesAutoresizingMaskIntoConstraints="NO" id="bad-nJ-mij">
-                                <rect key="frame" x="20" y="103" width="374" height="310"/>
+                                <rect key="frame" x="20" y="103" width="374" height="348"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-aH-xSM" userLabel="Park Address">
-                                <rect key="frame" x="20" y="439" width="374" height="21"/>
+                                <rect key="frame" x="20" y="476" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-XL-1Zk">
-                                <rect key="frame" x="20" y="468" width="374" height="21"/>
+                                <rect key="frame" x="20" y="526" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -317,14 +310,13 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="bad-nJ-mij" id="4J8-iT-pYo"/>
-                        <outlet property="noInfoLabel" destination="5hG-Hh-mOm" id="MOB-7C-ZBt"/>
                         <outlet property="parkAddress" destination="zqc-aH-xSM" id="rGk-mf-4Ry"/>
                         <outlet property="parkHours" destination="MTi-XL-1Zk" id="dCk-Kf-9ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCQ-Gq-Wgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3371" y="42"/>
+            <point key="canvasLocation" x="3369.5652173913045" y="41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
