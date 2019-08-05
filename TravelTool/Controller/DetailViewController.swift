@@ -17,6 +17,8 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var parkAddress: UILabel!
     @IBOutlet weak var parkHours: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var publicFlickrLabel: UILabel!
+    @IBOutlet weak var photoLabel: UILabel!
     
     var location = [LocationDetails]()
     var photos = [Photo]()
@@ -47,9 +49,11 @@ class DetailViewController: BaseViewController {
                     self.parkAddress.isHidden = true
                     self.parkHours.isHidden = true
                     self.infoLabel.isHidden = false
+                    self.photoLabel.isHidden = false
                 } else {
                     for location in location ?? [] {
                         self.infoLabel.isHidden = true
+                        self.photoLabel.isHidden = true
                         self.address = location.location2?.humanAddress.address ?? ""
                         // lat/lon values are reversed in the results
                         self.lat = location.location2?.longitude ?? ""
@@ -101,6 +105,7 @@ class DetailViewController: BaseViewController {
                 })
             } else {
                 print("Photo is nil")
+                self.photoLabel.isHidden = false
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(named: "park")
                 }
@@ -126,9 +131,11 @@ class DetailViewController: BaseViewController {
                     self.imageView.image = UIImage(data: data!)
                     self.imageView.contentMode = .scaleAspectFill
                     self.imageView.alpha = 1.0
+                    self.publicFlickrLabel.isHidden = false
                 }
             } else {
                 print("Photo data not found")
+                self.photoLabel.isHidden = true
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(named: "park")
                 }
