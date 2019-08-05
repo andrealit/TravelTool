@@ -43,6 +43,14 @@ class DetailViewController: BaseViewController {
         navigationItem.title = parkTitle
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+    }
+    
     // MARK: Retrieve Park Details
     
     func getTrafficDetails() {
@@ -69,6 +77,7 @@ class DetailViewController: BaseViewController {
                     }
                 }
             } else {
+                self.hideActivityIndicator()
                 self.showAlert(message: "There was an error retrieving location details", title: "Sorry")
             }
         }
