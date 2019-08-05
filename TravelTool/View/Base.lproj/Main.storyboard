@@ -304,6 +304,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJD-d1-zrY" userLabel="Address">
+                                <rect key="frame" x="20" y="378" width="374" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No info for display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAP-zY-DWw" userLabel="No Info">
                                 <rect key="frame" x="138" y="438" width="138.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -316,15 +323,10 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-aH-xSM" userLabel="Park Address">
-                                <rect key="frame" x="20" y="380" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-XL-1Zk">
-                                <rect key="frame" x="20" y="409" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31G-yq-SOJ" userLabel="Hours">
+                                <rect key="frame" x="20" y="407" width="374" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -335,25 +337,20 @@
                             <constraint firstItem="a1v-TW-sut" firstAttribute="centerX" secondItem="bad-nJ-mij" secondAttribute="centerX" id="1av-hQ-uN4"/>
                             <constraint firstItem="bad-nJ-mij" firstAttribute="top" secondItem="Q3j-WH-xn1" secondAttribute="bottom" constant="20" id="3qn-Hv-PMX"/>
                             <constraint firstItem="TAP-zY-DWw" firstAttribute="centerX" secondItem="yNg-dA-kwA" secondAttribute="centerX" id="6EO-5m-csI"/>
-                            <constraint firstAttribute="trailing" secondItem="MTi-XL-1Zk" secondAttribute="trailing" constant="20" id="6eP-HW-O8F"/>
-                            <constraint firstAttribute="trailing" secondItem="zqc-aH-xSM" secondAttribute="trailing" constant="20" id="FPn-D3-CMd"/>
-                            <constraint firstItem="MTi-XL-1Zk" firstAttribute="top" secondItem="zqc-aH-xSM" secondAttribute="bottom" constant="8" id="J7r-6K-Uhj"/>
                             <constraint firstItem="TAP-zY-DWw" firstAttribute="centerY" secondItem="yNg-dA-kwA" secondAttribute="centerY" id="Khm-G4-BeE"/>
                             <constraint firstItem="bad-nJ-mij" firstAttribute="leading" secondItem="yNg-dA-kwA" secondAttribute="leading" constant="20" id="Nii-a4-P0G"/>
                             <constraint firstItem="Ww1-2N-uiW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yNg-dA-kwA" secondAttribute="leading" symbolic="YES" id="Xvc-bj-G3U"/>
                             <constraint firstItem="Ww1-2N-uiW" firstAttribute="top" secondItem="bad-nJ-mij" secondAttribute="bottom" id="cKG-eB-Hsg"/>
                             <constraint firstItem="bad-nJ-mij" firstAttribute="centerX" secondItem="yNg-dA-kwA" secondAttribute="centerX" id="dku-q1-ovV"/>
                             <constraint firstAttribute="trailing" secondItem="Ww1-2N-uiW" secondAttribute="trailing" constant="20" id="enC-QA-nwD"/>
-                            <constraint firstItem="zqc-aH-xSM" firstAttribute="leading" secondItem="yNg-dA-kwA" secondAttribute="leading" constant="20" id="gld-BT-fhf"/>
                             <constraint firstItem="a1v-TW-sut" firstAttribute="centerY" secondItem="bad-nJ-mij" secondAttribute="centerY" id="iUb-wZ-0Rm"/>
-                            <constraint firstItem="MTi-XL-1Zk" firstAttribute="leading" secondItem="yNg-dA-kwA" secondAttribute="leading" constant="20" id="rE2-al-faZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="bad-nJ-mij" id="4J8-iT-pYo"/>
                         <outlet property="infoLabel" destination="TAP-zY-DWw" id="KnK-F4-gLB"/>
-                        <outlet property="parkAddress" destination="zqc-aH-xSM" id="rGk-mf-4Ry"/>
-                        <outlet property="parkHours" destination="MTi-XL-1Zk" id="dCk-Kf-9ae"/>
+                        <outlet property="parkAddress" destination="hJD-d1-zrY" id="87t-Nd-IGh"/>
+                        <outlet property="parkHours" destination="31G-yq-SOJ" id="MdV-gq-Uls"/>
                         <outlet property="photoLabel" destination="a1v-TW-sut" id="OVA-HO-DMM"/>
                         <outlet property="publicFlickrLabel" destination="Ww1-2N-uiW" id="DHH-j5-nid"/>
                     </connections>

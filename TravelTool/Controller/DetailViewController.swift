@@ -23,7 +23,6 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var publicFlickrLabel: UILabel!
     @IBOutlet weak var photoLabel: UILabel!
     
-    
     var location = [LocationDetails]()
     var photos = [Photo]()
     var parkId: String!
@@ -70,7 +69,7 @@ class DetailViewController: BaseViewController {
                         self.infoLabel.isHidden = true
                         self.photoLabel.isHidden = true
                         self.address = location.location2?.humanAddress.address ?? ""
-                        // lat/lon values are reversed in the results
+                        // lat/lon values reversed in the results for the api endpoint
                         self.lat = location.location2?.longitude ?? ""
                         self.lon = location.location2?.latitude ?? ""
                         self.parkAddress.text = "Address: \(location.location2?.humanAddress.address ?? "")"
