@@ -47,23 +47,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-zf-ltO">
+                                <rect key="frame" x="152.5" y="575" width="109" height="30"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="TZj-Et-7hA"/>
+                                </constraints>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLoginView:" destination="uMT-A3-F60" eventType="touchUpInside" id="CCf-pd-DxV"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soz-qM-lu1" userLabel="Background Blur">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qh4-Oq-lbs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRr-Ou-qfp" userLabel="Header">
                                 <rect key="frame" x="0.0" y="88" width="414" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-8t-BBQ">
-                                        <rect key="frame" x="333" y="10" width="73" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="Bc2-ku-GRl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                        <state key="normal" title="SIGN OUT">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signOut:" destination="uMT-A3-F60" eventType="touchUpInside" id="9Wr-49-oN3"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-XH-ETH">
                                         <rect key="frame" x="0.0" y="1" width="200" height="33"/>
                                         <constraints>
@@ -76,11 +83,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0078431372550000003" green="0.53333333329999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="6uD-8t-BBQ" firstAttribute="centerY" secondItem="VRr-Ou-qfp" secondAttribute="centerY" id="Cja-2X-Ezj"/>
                                     <constraint firstItem="CUI-XH-ETH" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="1" id="Stl-Ss-p7a"/>
-                                    <constraint firstItem="6uD-8t-BBQ" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="10" id="cKq-aI-Vqd"/>
                                     <constraint firstItem="CUI-XH-ETH" firstAttribute="leading" secondItem="VRr-Ou-qfp" secondAttribute="leading" id="eXU-6q-3fR"/>
-                                    <constraint firstAttribute="trailing" secondItem="6uD-8t-BBQ" secondAttribute="trailing" constant="8" id="iX3-rZ-9ou"/>
                                     <constraint firstAttribute="height" constant="40" id="lcD-f1-KBk"/>
                                 </constraints>
                             </view>
@@ -142,35 +146,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1IF-84-GVk"/>
                                 </constraints>
-                                <state key="normal" title="Image Message" image="ic_add_a_photo"/>
-                                <connections>
-                                    <action selector="didTapAddPhoto:" destination="uMT-A3-F60" eventType="touchUpInside" id="rBi-Oc-NUf"/>
-                                </connections>
+                                <state key="normal" title="Image Message" image="ic_google.png"/>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-jV-qSR">
                                 <rect key="frame" x="16" y="136" width="382" height="624"/>
                             </imageView>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soz-qM-lu1" userLabel="Background Blur">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qh4-Oq-lbs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-zf-ltO">
-                                <rect key="frame" x="152.5" y="575" width="109" height="30"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="TZj-Et-7hA"/>
-                                </constraints>
-                                <state key="normal" title="SIGN IN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showLoginView:" destination="uMT-A3-F60" eventType="touchUpInside" id="CCf-pd-DxV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -211,12 +191,11 @@
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="BIo-Bj-XYJ"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="NVG-Ig-WMp"/>
                         <outlet property="imageDisplay" destination="gLD-jV-qSR" id="DUN-s7-WfS"/>
-                        <outlet property="imageMessage" destination="nhb-8J-WZ5" id="CMD-ZC-1Qr"/>
+                        <outlet property="imageMessage" destination="nhb-8J-WZ5" id="W0i-CB-5sf"/>
                         <outlet property="messageTextField" destination="STK-FK-gn5" id="Ecg-Bg-VzC"/>
                         <outlet property="messagesTable" destination="DHD-HU-kCB" id="wu3-D7-t29"/>
                         <outlet property="sendButton" destination="wv1-bL-LxQ" id="Sn6-Xk-Ml2"/>
                         <outlet property="signInButton" destination="saZ-zf-ltO" id="105-G5-rhx"/>
-                        <outlet property="signOutButton" destination="6uD-8t-BBQ" id="lol-s1-XDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLT-eE-jeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,8 +350,8 @@
     </scenes>
     <resources>
         <image name="ic_account_circle" width="24" height="24"/>
-        <image name="ic_add_a_photo" width="24" height="24"/>
         <image name="ic_email.png" width="24" height="24"/>
+        <image name="ic_google.png" width="24" height="24"/>
         <image name="ic_visibility.png" width="24" height="24"/>
         <image name="park_filler" width="512" height="512"/>
     </resources>

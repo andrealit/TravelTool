@@ -27,6 +27,7 @@ class BaseViewController: UIViewController {
     
     func showActivityIndicator() {
         myIndicator.isHidden = false
+        myIndicator.bringSubviewToFront(self.view)
         myIndicator.startAnimating()
     }
     

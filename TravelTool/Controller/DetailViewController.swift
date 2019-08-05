@@ -6,6 +6,9 @@
 //  Copyright © 2019 Andrea Tongsak. All rights reserved.
 //
 
+
+/// Credit: Data derived from park json, data from Flickr, Seattle repo
+
 import UIKit
 import CoreData
 
@@ -19,6 +22,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var publicFlickrLabel: UILabel!
     @IBOutlet weak var photoLabel: UILabel!
+    
     
     var location = [LocationDetails]()
     var photos = [Photo]()
@@ -42,6 +46,7 @@ class DetailViewController: BaseViewController {
     // MARK: Retrieve Park Details
     
     func getTrafficDetails() {
+        showActivityIndicator()
         TrafficClient.getTrafficDetails(parkId: parkId) { (location, error) in
             if error == nil {
                 self.location = location ?? []
@@ -52,6 +57,7 @@ class DetailViewController: BaseViewController {
                     self.photoLabel.isHidden = false
                 } else {
                     for location in location ?? [] {
+                        self.hideActivityIndicator()
                         self.infoLabel.isHidden = true
                         self.photoLabel.isHidden = true
                         self.address = location.location2?.humanAddress.address ?? ""
@@ -60,7 +66,6 @@ class DetailViewController: BaseViewController {
                         self.lon = location.location2?.latitude ?? ""
                         self.parkAddress.text = "Address: \(location.location2?.humanAddress.address ?? "")"
                         self.parkHours.text = "Hours: \(location.hours ?? "")"
-                        
                     }
                 }
             } else {
@@ -72,8 +77,9 @@ class DetailViewController: BaseViewController {
     // MARK: Get public Flickr photo for hero image
     
     func getRandomParkPhoto() {
+        showActivityIndicator()
         let escapedParkTitle = parkTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        // returns number of pages in results for use in randomPage()
+        // returns number of pages in results for use
         TrafficClient.getRandomFlickrPhoto(lat: lat, lon: lon, page: page, text: escapedParkTitle, completion: { (photos, error) in
             if (photos != nil) {
                 if photos?.pages == 0 {
@@ -105,6 +111,7 @@ class DetailViewController: BaseViewController {
                 })
             } else {
                 print("Photo is nil")
+                self.hideActivityIndicator()
                 self.photoLabel.isHidden = false
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(named: "park")
@@ -113,7 +120,7 @@ class DetailViewController: BaseViewController {
         })
     }
     
-    // MARK: Generate random page number for Flickr API Request
+    // MARK: Generate page number for Flickr API
     
     func randomPage() {
         let randomPage = Int.random(in: 1...pages)
@@ -135,7 +142,6 @@ class DetailViewController: BaseViewController {
                 }
             } else {
                 print("Photo data not found")
-                self.photoLabel.isHidden = true
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(named: "park")
                 }

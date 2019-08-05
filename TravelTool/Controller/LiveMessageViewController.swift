@@ -6,6 +6,9 @@
 //  Copyright © 2019 Andrea Tongsak. All rights reserved.
 //
 
+
+/// Credit: Altered and updated from Udacity's Friendly Chat App
+
 import UIKit
 import Firebase
 import FirebaseUI
@@ -36,7 +39,6 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var imageMessage: UIButton!
-    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var messagesTable: UITableView!
     @IBOutlet weak var backgroundBlur: UIVisualEffectView!
     @IBOutlet weak var imageDisplay: UIImageView!
@@ -46,7 +48,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Life Cycle
     
     override func viewDidLoad() {
-        configureAuth()
+//        configureAuth()
         
         ref = Database.database().reference()
         ref?.child("messages").observe(.childAdded) { (snapshot: DataSnapshot) in
@@ -156,7 +158,7 @@ class LiveMessageViewController: UIViewController, UINavigationControllerDelegat
     
     func signedInStatus(isSignedIn: Bool) {
         signInButton.isHidden = isSignedIn
-        signOutButton.isHidden = !isSignedIn
+        //signOutButton.isHidden = !isSignedIn
         messagesTable.isHidden = !isSignedIn
         messageTextField.isHidden = !isSignedIn
         sendButton.isHidden = !isSignedIn
