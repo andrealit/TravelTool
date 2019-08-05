@@ -16,7 +16,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var parkAddress: UILabel!
     @IBOutlet weak var parkHours: UILabel!
-    
+    @IBOutlet weak var infoLabel: UILabel!
     
     var location = [LocationDetails]()
     var photos = [Photo]()
@@ -46,18 +46,21 @@ class DetailViewController: BaseViewController {
                 if location?.isEmpty == true {
                     self.parkAddress.isHidden = true
                     self.parkHours.isHidden = true
+                    self.infoLabel.isHidden = false
                 } else {
                     for location in location ?? [] {
+                        self.infoLabel.isHidden = true
                         self.address = location.location2?.humanAddress.address ?? ""
                         // lat/lon values are reversed in the results
                         self.lat = location.location2?.longitude ?? ""
                         self.lon = location.location2?.latitude ?? ""
                         self.parkAddress.text = "Address: \(location.location2?.humanAddress.address ?? "")"
                         self.parkHours.text = "Hours: \(location.hours ?? "")"
+                        
                     }
                 }
             } else {
-                self.showAlert(message: "There was an error retrieving park details", title: "Sorry")
+                self.showAlert(message: "There was an error retrieving location details", title: "Sorry")
             }
         }
     }

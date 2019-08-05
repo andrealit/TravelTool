@@ -40,8 +40,8 @@
             <objects>
                 <viewController title="FCViewController" id="uMT-A3-F60" userLabel="LiveMessageViewController" customClass="LiveMessageViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zMh-Fi-PEo"/>
-                        <viewControllerLayoutGuide type="bottom" id="o90-sB-CiJ"/>
+                        <viewControllerLayoutGuide type="top" id="zVi-WV-JbB"/>
+                        <viewControllerLayoutGuide type="bottom" id="TGR-S7-FKO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dk-Kp-xdq" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -182,20 +182,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VRr-Ou-qfp" secondAttribute="trailing" constant="-20" id="7LE-0W-xWN"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-4" id="8ff-Rm-C4p"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="8" id="Bqo-a1-UsK"/>
-                            <constraint firstItem="o90-sB-CiJ" firstAttribute="top" secondItem="soz-qM-lu1" secondAttribute="bottom" id="FKL-SY-YPo"/>
+                            <constraint firstItem="TGR-S7-FKO" firstAttribute="top" secondItem="soz-qM-lu1" secondAttribute="bottom" id="FKL-SY-YPo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="soz-qM-lu1" secondAttribute="trailing" constant="-20" id="Fvo-HH-27I"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="K02-4b-r5g"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="centerY" secondItem="nhb-8J-WZ5" secondAttribute="centerY" id="MG1-Zi-pOg"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="DHD-HU-kCB" secondAttribute="bottom" constant="8" symbolic="YES" id="VzZ-Uw-ID6"/>
-                            <constraint firstItem="o90-sB-CiJ" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="16" id="bLt-MX-wY3"/>
+                            <constraint firstItem="TGR-S7-FKO" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="16" id="bLt-MX-wY3"/>
                             <constraint firstItem="gLD-jV-qSR" firstAttribute="centerY" secondItem="4Dk-Kp-xdq" secondAttribute="centerY" id="c3y-Dd-Xq5"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="8" id="der-Ny-LDv"/>
                             <constraint firstItem="soz-qM-lu1" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="e5v-1q-lbC"/>
                             <constraint firstItem="wv1-bL-LxQ" firstAttribute="leading" secondItem="STK-FK-gn5" secondAttribute="trailing" constant="8" symbolic="YES" id="e7L-dI-PkH"/>
                             <constraint firstItem="wv1-bL-LxQ" firstAttribute="trailing" secondItem="DHD-HU-kCB" secondAttribute="trailing" id="jLu-32-ERV"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="lXP-yU-4e8"/>
-                            <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="zMh-Fi-PEo" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
-                            <constraint firstItem="soz-qM-lu1" firstAttribute="top" secondItem="zMh-Fi-PEo" secondAttribute="bottom" id="sdv-Dx-GGs"/>
+                            <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="zVi-WV-JbB" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
+                            <constraint firstItem="soz-qM-lu1" firstAttribute="top" secondItem="zVi-WV-JbB" secondAttribute="bottom" id="sdv-Dx-GGs"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="top" id="spZ-ka-Cxy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DHD-HU-kCB" secondAttribute="trailing" constant="-4" id="xhU-Sl-tIr"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="yFC-zL-99b"/>
@@ -274,15 +274,15 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="sfw-kd-zDS" userLabel="Map View Controller" customClass="MapViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xuZ-Sc-nkk"/>
-                        <viewControllerLayoutGuide type="bottom" id="ax2-5g-n6D"/>
+                        <viewControllerLayoutGuide type="top" id="1Eh-gx-8qc"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZP-ta-Tg7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yRv-c2-pUl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QJV-vF-gzA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="723"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
@@ -298,37 +298,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojM-WN-emD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="42"/>
+            <point key="canvasLocation" x="2608.6956521739135" y="41.517857142857139"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="x4r-0l-fSj">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="Zm8-hw-4hH" userLabel="Detail View Controller" customClass="DetailViewController" customModule="TravelTool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lmk-hL-iMu"/>
-                        <viewControllerLayoutGuide type="bottom" id="CUx-1a-1LJ"/>
+                        <viewControllerLayoutGuide type="top" id="YZV-hV-2ks"/>
+                        <viewControllerLayoutGuide type="bottom" id="7gr-7b-LZ7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yNg-dA-kwA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="park_filler" translatesAutoresizingMaskIntoConstraints="NO" id="bad-nJ-mij">
-                                <rect key="frame" x="20" y="103" width="374" height="348"/>
+                                <rect key="frame" x="20" y="96" width="374" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-aH-xSM" userLabel="Park Address">
-                                <rect key="frame" x="20" y="476" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flickr Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww1-2N-uiW" userLabel="Flickr">
+                                <rect key="frame" x="335" y="384" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-aH-xSM" userLabel="Park Address">
+                                <rect key="frame" x="20" y="423" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-XL-1Zk">
-                                <rect key="frame" x="20" y="526" width="374" height="21"/>
+                                <rect key="frame" x="20" y="452" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No info for display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAP-zY-DWw" userLabel="No Info">
+                                <rect key="frame" x="125" y="447" width="165" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -336,13 +350,14 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="bad-nJ-mij" id="4J8-iT-pYo"/>
+                        <outlet property="infoLabel" destination="TAP-zY-DWw" id="KnK-F4-gLB"/>
                         <outlet property="parkAddress" destination="zqc-aH-xSM" id="rGk-mf-4Ry"/>
                         <outlet property="parkHours" destination="MTi-XL-1Zk" id="dCk-Kf-9ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCQ-Gq-Wgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3503" y="42"/>
+            <point key="canvasLocation" x="3502.898550724638" y="41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
