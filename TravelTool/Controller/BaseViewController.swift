@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // set up activity indicator
+        // activity indicator
         myIndicator = UIActivityIndicatorView (style: UIActivityIndicatorView.Style.gray)
         self.view.addSubview(myIndicator)
         myIndicator.bringSubviewToFront(self.view)

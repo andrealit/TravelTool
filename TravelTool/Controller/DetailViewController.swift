@@ -66,7 +66,7 @@ class DetailViewController: BaseViewController {
     
     func getRandomParkPhoto() {
         let escapedParkTitle = parkTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        // number of pages in results in order to use in randomPage()
+        // returns number of pages in results for use in randomPage()
         TrafficClient.getRandomFlickrPhoto(lat: lat, lon: lon, page: page, text: escapedParkTitle, completion: { (photos, error) in
             if (photos != nil) {
                 if photos?.pages == 0 {
