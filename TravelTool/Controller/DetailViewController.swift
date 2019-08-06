@@ -64,8 +64,9 @@ class DetailViewController: BaseViewController {
                     self.infoLabel.isHidden = false
                     self.photoLabel.isHidden = false
                 } else {
-                    for location in location ?? [] {
-                        self.hideActivityIndicator()
+                    //for location in location ?? [] {
+                    self.hideActivityIndicator()
+                    if let location = location?.last {
                         self.infoLabel.isHidden = true
                         self.photoLabel.isHidden = true
                         self.address = location.location2?.humanAddress.address ?? ""

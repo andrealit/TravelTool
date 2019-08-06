@@ -373,7 +373,7 @@ extension LiveMessageViewController: UITextFieldDelegate {
             let data = [Constants.MessageFields.text: textField.text! as String]
             sendMessage(data: data)
             textField.text = ""
-            textField.resignFirstResponder()
+//            textField.resignFirstResponder()
         }
         return true
     }
