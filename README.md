@@ -37,6 +37,7 @@ This app uses the following frameworks and APIs:
 | API | Description |
 | --- | --- |
 | Flickr | Loads photo images. |
+| Mapbox | Provides navigation services. |
 
 ## License
 The contents of this repository are covered under the Apache License 2.0.
